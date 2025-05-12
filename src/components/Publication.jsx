@@ -25,9 +25,9 @@ export const PublicationList = () => {
       <div
         className="container mt-5"
         style={{
-          backgroundColor: "#1C1F2A", 
-          color: "#F8F9FA", 
-          minHeight: "100vh", 
+          backgroundColor: "#1C1F2A",
+          color: "#F8F9FA",
+          minHeight: "100vh",
           paddingBottom: "50px",
         }}
       >
@@ -35,7 +35,7 @@ export const PublicationList = () => {
           className="jumbotron text-center p-5 rounded mb-5"
           style={{
             backgroundColor: "#3A506B",
-            color: "#F8F9FA", 
+            color: "#F8F9FA",
           }}
         >
           <h1 className="display-7">Publicaciones</h1>
@@ -49,42 +49,49 @@ export const PublicationList = () => {
           </p>
         ) : (
           <div className="row">
-            {publications.map((publication) => (
-              <div key={publication._id} className="col-md-4 mb-4">
-                <div
-                  className="card shadow-sm"
-                  style={{
-                    backgroundColor: "#F8F9FA", 
-                    borderColor: "#CED4DA", 
-                  }}
-                >
-                  <div className="card-body">
-                    <h5 className="card-title" style={{ color: "#3A506B" }}>
-                      {publication.title}
-                    </h5>
-                    <p className="card-text" style={{ color: "#1C1F2A" }}>
-                      {publication.description}
-                    </p>
-                    <p className="text-muted">
-                      <small>
-                        <strong>Creado el:</strong>{" "}
-                        {new Date(publication.creationdate).toLocaleString()}
-                      </small>
-                    </p>
-                    <button
-                      className="btn mt-3"
-                      onClick={() => handleAddComment(publication._id)}
-                      style={{
-                        backgroundColor: "#CBA135", 
-                        color: "#F8F9FA", 
-                      }}
-                    >
-                      Agregar Comentario
-                    </button>
+            {publications
+              .slice() // Crear una copia para no mutar el estado original
+              .sort(
+                (a, b) => new Date(b.creationdate) - new Date(a.creationdate)
+              ) // Ordenar por fecha descendente
+              .map((publication) => (
+                <div key={publication._id} className="col-md-4 mb-4">
+                  <div
+                    className="card shadow-sm"
+                    style={{
+                      backgroundColor: "#F8F9FA",
+                      borderColor: "#CED4DA",
+                    }}
+                  >
+                    <div className="card-body">
+                      <h5 className="card-title" style={{ color: "#3A506B" }}>
+                        {publication.title}
+                      </h5>
+                      <p className="card-text" style={{ color: "#1C1F2A" }}>
+                        {publication.description}
+                      </p>
+                      <p className="text-muted">
+                        <small>
+                          <strong>Creado el:</strong>{" "}
+                          {new Date(
+                            publication.creationdate
+                          ).toLocaleString()}
+                        </small>
+                      </p>
+                      <button
+                        className="btn mt-3"
+                        onClick={() => handleAddComment(publication._id)}
+                        style={{
+                          backgroundColor: "#CBA135",
+                          color: "#F8F9FA",
+                        }}
+                      >
+                        Agregar Comentario
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         )}
 
@@ -93,7 +100,7 @@ export const PublicationList = () => {
             className="modal fade show"
             style={{
               display: "block",
-              backgroundColor: "rgba(0, 0, 0, 0.5)", 
+              backgroundColor: "rgba(0, 0, 0, 0.5)",
             }}
             tabIndex="-1"
             role="dialog"
@@ -102,8 +109,8 @@ export const PublicationList = () => {
               <div
                 className="modal-content"
                 style={{
-                  backgroundColor: "#3A506B", 
-                  color: "#F8F9FA", 
+                  backgroundColor: "#3A506B",
+                  color: "#F8F9FA",
                 }}
               >
                 <div className="modal-header">
@@ -115,8 +122,8 @@ export const PublicationList = () => {
                     className="btn-close"
                     onClick={closeModal}
                     style={{
-                      backgroundColor: "#CBA135", 
-                      color: "#F8F9FA", 
+                      backgroundColor: "#CBA135",
+                      color: "#F8F9FA",
                     }}
                   ></button>
                 </div>
