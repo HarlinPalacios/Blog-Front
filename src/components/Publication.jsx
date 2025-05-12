@@ -50,10 +50,10 @@ export const PublicationList = () => {
         ) : (
           <div className="row">
             {publications
-              .slice() // Crear una copia para no mutar el estado original
+              .slice()
               .sort(
                 (a, b) => new Date(b.creationdate) - new Date(a.creationdate)
-              ) // Ordenar por fecha descendente
+              ) 
               .map((publication) => (
                 <div key={publication._id} className="col-md-4 mb-4">
                   <div

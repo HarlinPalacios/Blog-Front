@@ -23,24 +23,23 @@ const AddComment = ({ publicationId, onCommentAdded }) => {
         onCommentAdded();
       }
     } catch (err) {
-      // Manejo de errores
+      
     }
   };
 
   const comments = [
-    // Ejemplo de comentarios (deberías reemplazar esto con los datos reales)
     { id: 1, usuario: "Usuario1", comment: "Comentario reciente", date: "2025-05-11T10:00:00Z" },
     { id: 2, usuario: "Usuario2", comment: "Comentario antiguo", date: "2025-05-10T08:00:00Z" },
   ];
 
-  const sortedComments = comments.slice().sort((a, b) => new Date(b.date) - new Date(a.date)); // Ordenar por fecha descendente
+  const sortedComments = comments.slice().sort((a, b) => new Date(b.date) - new Date(a.date)); 
 
   return (
     <div
       className="container mt-4 p-4 rounded"
       style={{
-        backgroundColor: "#1C1F2A", // Fondo principal
-        color: "#F8F9FA", // Texto claro
+        backgroundColor: "#1C1F2A", 
+        color: "#F8F9FA", 
       }}
     >
       <h5 style={{ color: "#3A506B" }}>Agregar Comentario</h5>
@@ -59,9 +58,9 @@ const AddComment = ({ publicationId, onCommentAdded }) => {
                 onChange={(e) => setUsuario(e.target.value)}
                 required
                 style={{
-                  backgroundColor: "#CED4DA", // Fondo gris claro
-                  borderColor: "#CED4DA", // Bordes grises
-                  color: "#1C1F2A", // Texto oscuro
+                  backgroundColor: "#CED4DA",
+                  borderColor: "#CED4DA", 
+                  color: "#1C1F2A", 
                 }}
               />
             </div>
@@ -77,9 +76,9 @@ const AddComment = ({ publicationId, onCommentAdded }) => {
                 onChange={(e) => setComment(e.target.value)}
                 required
                 style={{
-                  backgroundColor: "#CED4DA", // Fondo gris claro
-                  borderColor: "#CED4DA", // Bordes grises
-                  color: "#1C1F2A", // Texto oscuro
+                  backgroundColor: "#CED4DA", 
+                  borderColor: "#CED4DA", 
+                  color: "#1C1F2A", 
                 }}
               ></textarea>
             </div>
@@ -92,7 +91,7 @@ const AddComment = ({ publicationId, onCommentAdded }) => {
                 className="btn"
                 disabled={loading}
                 style={{
-                  backgroundColor: "#3A506B", // Fondo del botón
+                  backgroundColor: "#3A506B", 
                   color: "#F8F9FA",
                 }}
               >
