@@ -53,7 +53,7 @@ export const PublicationList = () => {
               .slice()
               .sort(
                 (a, b) => new Date(b.creationdate) - new Date(a.creationdate)
-              ) 
+              )
               .map((publication) => (
                 <div key={publication._id} className="col-md-4 mb-4">
                   <div
@@ -69,6 +69,10 @@ export const PublicationList = () => {
                       </h5>
                       <p className="card-text" style={{ color: "#1C1F2A" }}>
                         {publication.description}
+                      </p>
+                      <p className="card-text" style={{ color: "#1C1F2A" }}>
+                        <strong>Curso:</strong>{" "}
+                        {publication.curso?.name || "No especificado"}
                       </p>
                       <p className="text-muted">
                         <small>

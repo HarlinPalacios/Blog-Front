@@ -28,8 +28,7 @@ const AddComment = ({ publicationId, onCommentAdded }) => {
   };
 
   const comments = [
-    { id: 1, usuario: "Usuario1", comment: "Comentario reciente", date: "2025-05-11T10:00:00Z" },
-    { id: 2, usuario: "Usuario2", comment: "Comentario antiguo", date: "2025-05-10T08:00:00Z" },
+    
   ];
 
   const sortedComments = comments.slice().sort((a, b) => new Date(b.date) - new Date(a.date)); 
@@ -101,7 +100,6 @@ const AddComment = ({ publicationId, onCommentAdded }) => {
           </form>
 
           <div className="mt-4">
-            <h6 style={{ color: "#3A506B" }}>Comentarios</h6>
             {sortedComments.map((c) => (
               <div key={c.id} className="mb-3 p-3 rounded" style={{ backgroundColor: "#CED4DA" }}>
                 <p style={{ color: "#1C1F2A" }}>
