@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Navbar } from "../../navs/Navbar"; // Importa la barra de navegación
+import { Navbar } from "../../navs/Navbar"; 
 
 const HomePage = () => {
   return (
     <>
-      {/* Barra de navegación */}
       <Navbar />
 
       <div
@@ -13,8 +12,8 @@ const HomePage = () => {
         style={{
           backgroundColor: "#1C1F2A",
           color: "#F8F9FA",
-          minHeight: "100vh", // Asegura que el fondo cubra toda la altura de la ventana
-          paddingBottom: "50px", // Espacio adicional al final
+          minHeight: "100vh", 
+          paddingBottom: "50px", 
         }}
       >
         <div
@@ -76,7 +75,6 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Espacio adicional debajo del contenido */}
       <div className="mb-5"></div>
     </>
   );

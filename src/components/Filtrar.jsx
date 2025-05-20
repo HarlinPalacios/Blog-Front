@@ -4,16 +4,16 @@ import { Navbar } from "./navs/Navbar";
 
 const Filtrar = () => {
   const [curso, setCurso] = useState("");
-  const [hasSearched, setHasSearched] = useState(false); // Nuevo estado para controlar si se ha buscado
+  const [hasSearched, setHasSearched] = useState(false); 
   const { publications, loading, error, filtrarPorCurso, setPublications } = useFiltrar();
 
   const handleSearch = (e) => {
     e.preventDefault();
-    setHasSearched(true); // Marca que se ha realizado una búsqueda
+    setHasSearched(true); 
     if (curso.trim() !== "") {
       filtrarPorCurso(curso);
     } else {
-      setPublications([]); // Limpia los resultados si el campo está vacío
+      setPublications([]); 
     }
   };
 
@@ -24,17 +24,17 @@ const Filtrar = () => {
       <div
         className="container mt-5"
         style={{
-          backgroundColor: "#1C1F2A", // Fondo principal
-          color: "#F8F9FA", // Texto claro
-          minHeight: "100vh", // Asegura que el fondo cubra toda la pantalla
+          backgroundColor: "#1C1F2A",
+          color: "#F8F9FA", 
+          minHeight: "100vh",
           paddingBottom: "50px",
         }}
       >
         <div
           className="jumbotron text-center p-5 rounded mb-5"
           style={{
-            backgroundColor: "#3A506B", // Fondo del encabezado
-            color: "#F8F9FA", // Texto claro
+            backgroundColor: "#3A506B",
+            color: "#F8F9FA", 
           }}
         >
           <h1 className="display-7">Filtrar Publicaciones</h1>
@@ -49,17 +49,17 @@ const Filtrar = () => {
               value={curso}
               onChange={(e) => setCurso(e.target.value)}
               style={{
-                backgroundColor: "#F8F9FA", // Fondo claro
-                borderColor: "#CED4DA", // Bordes grises
-                color: "#1C1F2A", // Texto oscuro
+                backgroundColor: "#F8F9FA",
+                borderColor: "#CED4DA", 
+                color: "#1C1F2A", 
               }}
             />
             <button
               type="submit"
               className="btn"
               style={{
-                backgroundColor: "#CBA135", // Fondo del botón
-                color: "#F8F9FA", // Texto claro
+                backgroundColor: "#CBA135", 
+                color: "#F8F9FA", 
               }}
             >
               Filtrar
@@ -83,8 +83,8 @@ const Filtrar = () => {
                 <div
                   className="card shadow-sm h-100"
                   style={{
-                    backgroundColor: "#F8F9FA", // Fondo de la tarjeta
-                    borderColor: "#CED4DA", // Bordes grises
+                    backgroundColor: "#F8F9FA",
+                    borderColor: "#CED4DA", 
                   }}
                 >
                   <div className="card-body">

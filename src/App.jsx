@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./components/pages/dashboard/HomePage";
 import { PublicationList } from "./components/Publication";
 import { PublicationListCom } from "./components/PublicationListCom";
-import Filtrar from "./components/Filtrar"; // Importa el componente Filtrar
+import Filtrar from "./components/Filtrar"; 
 
 function App() {
   return (
