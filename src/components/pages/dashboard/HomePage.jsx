@@ -13,7 +13,7 @@ const HomePage = () => {
           backgroundColor: "#1C1F2A",
           color: "#F8F9FA",
           minHeight: "100vh", 
-          paddingBottom: "50px", 
+          paddingBottom: "50px",
         }}
       >
         <div
