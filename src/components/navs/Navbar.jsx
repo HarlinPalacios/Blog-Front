@@ -5,7 +5,7 @@ const NavLogo = () => {
   return (
     <img
       className="nav-logo"
-      src="./public/princi.png"
+      src="./public/navega..png"
       alt="Logo y nombre almacenadora"
       style={{
         width: "80px",
@@ -24,8 +24,8 @@ export const Navbar = () => {
     <nav
       className="navbar fixed-top d-flex justify-content-center align-items-center px-4"
       style={{
-        backgroundColor: "#1C1F2A", // Fondo principal de la barra de navegación
-        color: "#F8F9FA", // Texto claro
+        backgroundColor: "#1C1F2A",
+        color: "#F8F9FA",
       }}
     >
       <NavLogo />
@@ -35,8 +35,8 @@ export const Navbar = () => {
           to="/"
           className="btn"
           style={{
-            backgroundColor: "#3A506B", // Fondo del botón
-            color: "#F8F9FA", // Texto claro
+            backgroundColor: "#3A506B", 
+            color: "#F8F9FA", 
             width: "120px",
             height: "40px",
           }}
@@ -47,8 +47,8 @@ export const Navbar = () => {
           to="/publications"
           className="btn"
           style={{
-            backgroundColor: "#3A506B", // Fondo del botón
-            color: "#F8F9FA", // Texto claro
+            backgroundColor: "#3A506B", 
+            color: "#F8F9FA", 
             width: "120px",
             height: "40px",
           }}
@@ -59,8 +59,8 @@ export const Navbar = () => {
           to="/publication"
           className="btn"
           style={{
-            backgroundColor: "#3A506B", // Fondo del botón
-            color: "#F8F9FA", // Texto claro
+            backgroundColor: "#3A506B", 
+            color: "#F8F9FA", 
             width: "120px",
             height: "40px",
           }}
@@ -71,8 +71,8 @@ export const Navbar = () => {
           to="/filtrar"
           className="btn"
           style={{
-            backgroundColor: "#3A506B", // Fondo del botón
-            color: "#F8F9FA", // Texto claro
+            backgroundColor: "#3A506B", 
+            color: "#F8F9FA", 
             width: "120px",
             height: "40px",
           }}
