@@ -1,19 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Navbar } from "../../navs/Navbar"; 
-
+import { Navbar } from "../../navs/Navbar";
+ 
 const HomePage = () => {
   return (
     <>
       <Navbar />
-
+ 
       <div
-        className="container mt-5"
+        className="container-fluid mt-5"
         style={{
-          backgroundColor: "#1C1F2A",
+          backgroundColor: "#F0F0F0",
           color: "#F8F9FA",
-          minHeight: "100vh", 
-          paddingBottom: "50px",
+          minHeight: "100vh",
         }}
       >
         <div
@@ -22,12 +20,12 @@ const HomePage = () => {
         >
           <h1 className="display-7">Bienvenido al Blog</h1>
         </div>
-
-        <div className="row mt-5 justify-content-center">
-          <div className="col-md-6 mb-4">
+ 
+        <div className="row mt-4 justify-content-center">
+          <div className="col-md-8 mb-4">
             <div
               className="card shadow-sm"
-              style={{ backgroundColor: "#F8F9FA", borderColor: "#CED4DA" }}
+              style={{ backgroundColor: "#D6C6B1", borderColor: "#CED4DA" }}
             >
               <div className="card-body">
                 <h5 className="card-title" style={{ color: "#3A506B" }}>
@@ -39,10 +37,10 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          <div className="col-md-6 mb-4">
+          <div className="col-md-8 mb-4">
             <div
               className="card shadow-sm"
-              style={{ backgroundColor: "#F8F9FA", borderColor: "#CED4DA" }}
+              style={{ backgroundColor: "#D6C6B1", borderColor: "#CED4DA" }}
             >
               <div className="card-body">
                 <h5 className="card-title" style={{ color: "#3A506B" }}>
@@ -55,12 +53,12 @@ const HomePage = () => {
             </div>
           </div>
         </div>
-
-        <div className="row mt-5 justify-content-center">
-          <div className="col-md-6">
+ 
+        <div className="row mt-4 justify-content-center">
+          <div className="col-md-8">
             <div
               className="card shadow-sm"
-              style={{ backgroundColor: "#F8F9FA", borderColor: "#CED4DA" }}
+              style={{ backgroundColor: "#D6C6B1", borderColor: "#CED4DA" }}
             >
               <div className="card-body">
                 <h5 className="card-title" style={{ color: "#3A506B" }}>
@@ -74,10 +72,9 @@ const HomePage = () => {
           </div>
         </div>
       </div>
-
-      <div className="mb-5"></div>
+ 
     </>
   );
 };
-
+ 
 export default HomePage;

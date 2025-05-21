@@ -2,30 +2,30 @@ import React, { useState } from "react";
 import { usePublicationsList } from "../shared/hooks/usePublication";
 import AddComment from "./Comments";
 import { Navbar } from "./navs/Navbar";
-
+ 
 export const PublicationList = () => {
   const { publications, loading, error } = usePublicationsList();
   const [selectedPublication, setSelectedPublication] = useState(null);
-
+ 
   const handleAddComment = (publicationId) => {
     setSelectedPublication(publicationId);
   };
-
+ 
   const handleCommentAdded = () => {
     setSelectedPublication(null);
   };
-
+ 
   const closeModal = () => {
     setSelectedPublication(null);
   };
-
+ 
   return (
     <>
       <Navbar />
       <div
-        className="container mt-5"
+        className="container-fluid mt-5"
         style={{
-          backgroundColor: "#1C1F2A",
+          backgroundColor: "#F0F0F0",
           color: "#F8F9FA",
           minHeight: "100vh",
           paddingBottom: "50px",
@@ -40,7 +40,7 @@ export const PublicationList = () => {
         >
           <h1 className="display-7">Publicaciones</h1>
         </div>
-
+ 
         {loading ? (
           <p className="text-center">Cargando publicaciones...</p>
         ) : error ? (
@@ -48,23 +48,23 @@ export const PublicationList = () => {
             {error}
           </p>
         ) : (
-          <div className="row">
+          <div className="row d-flex justify-content-center">
             {publications
               .slice()
               .sort(
                 (a, b) => new Date(b.creationdate) - new Date(a.creationdate)
               )
               .map((publication) => (
-                <div key={publication._id} className="col-md-4 mb-4">
+                <div key={publication._id} className="col-md-8 mb-4 ">
                   <div
                     className="card shadow-sm"
                     style={{
-                      backgroundColor: "#F8F9FA",
+                      backgroundColor: "#D6C6B1",
                       borderColor: "#CED4DA",
                     }}
                   >
                     <div className="card-body">
-                      <h5 className="card-title" style={{ color: "#3A506B" }}>
+                      <h5 className="card-title" style={{ color: "#3A506B", padding: "1px"}}>
                         {publication.title}
                       </h5>
                       <p className="card-text" style={{ color: "#1C1F2A" }}>
@@ -98,7 +98,7 @@ export const PublicationList = () => {
               ))}
           </div>
         )}
-
+ 
         {selectedPublication && (
           <div
             className="modal fade show"

@@ -1,31 +1,31 @@
 import React, { useState } from "react";
 import { useFiltrar } from "../shared/hooks/useFiltrar";
 import { Navbar } from "./navs/Navbar";
-
+ 
 const Filtrar = () => {
   const [curso, setCurso] = useState("");
-  const [hasSearched, setHasSearched] = useState(false); 
+  const [hasSearched, setHasSearched] = useState(false);
   const { publications, loading, error, filtrarPorCurso, setPublications } = useFiltrar();
-
+ 
   const handleSearch = (e) => {
     e.preventDefault();
-    setHasSearched(true); 
+    setHasSearched(true);
     if (curso.trim() !== "") {
       filtrarPorCurso(curso);
     } else {
-      setPublications([]); 
+      setPublications([]);
     }
   };
-
+ 
   return (
     <>
       <Navbar />
-
+ 
       <div
-        className="container mt-5"
+         className="container-fluid mt-5"
         style={{
-          backgroundColor: "#1C1F2A",
-          color: "#F8F9FA", 
+          backgroundColor: "#F0F0F0",
+          color: "#F8F9FA",
           minHeight: "100vh",
           paddingBottom: "50px",
         }}
@@ -34,12 +34,12 @@ const Filtrar = () => {
           className="jumbotron text-center p-5 rounded mb-5"
           style={{
             backgroundColor: "#3A506B",
-            color: "#F8F9FA", 
+            color: "#F8F9FA",
           }}
         >
           <h1 className="display-7">Filtrar Publicaciones</h1>
         </div>
-
+ 
         <form onSubmit={handleSearch} className="d-flex mb-5 justify-content-center">
           <div className="w-50 d-flex">
             <input
@@ -50,23 +50,23 @@ const Filtrar = () => {
               onChange={(e) => setCurso(e.target.value)}
               style={{
                 backgroundColor: "#F8F9FA",
-                borderColor: "#CED4DA", 
-                color: "#1C1F2A", 
+                borderColor: "#CED4DA",
+                color: "#1C1F2A",
               }}
             />
             <button
               type="submit"
               className="btn"
               style={{
-                backgroundColor: "#CBA135", 
-                color: "#F8F9FA", 
+                backgroundColor: "#CBA135",
+                color: "#F8F9FA",
               }}
             >
               Filtrar
             </button>
           </div>
         </form>
-
+ 
         {loading && <p className="text-center">Cargando publicaciones...</p>}
         {error && (
           <p className="text-danger text-center" style={{ color: "#6C1D45" }}>
@@ -75,7 +75,7 @@ const Filtrar = () => {
             <small>Intenta buscar otro curso.</small>
           </p>
         )}
-
+ 
         {!loading && !error && publications.length > 0 && (
           <div className="row">
             {publications.map((publication) => (
@@ -83,8 +83,8 @@ const Filtrar = () => {
                 <div
                   className="card shadow-sm h-100"
                   style={{
-                    backgroundColor: "#F8F9FA",
-                    borderColor: "#CED4DA", 
+                    backgroundColor: "#D6C6B1",
+                    borderColor: "#CED4DA",
                   }}
                 >
                   <div className="card-body">
@@ -106,7 +106,7 @@ const Filtrar = () => {
             ))}
           </div>
         )}
-
+ 
         {!loading && !error && hasSearched && publications.length === 0 && (
           <p className="text-center text-danger" style={{ color: "#6C1D45" }}>
             No se encontraron publicaciones para el curso "{curso}".
@@ -116,5 +116,5 @@ const Filtrar = () => {
     </>
   );
 };
-
+ 
 export default Filtrar;
